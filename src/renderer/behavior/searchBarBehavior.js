@@ -1,36 +1,31 @@
+const contactQuery = require('../script/contactQuery');
+
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('searchBar');
     const searchBarInput = document.getElementById('searchBarInput');
 
-    // Garantir que o input esteja habilitado e focável
-    searchBarInput.disabled = false;
-    console.log("searchBarBehavior.js -> Barra de pesquisa habilitada.");
-    
-    searchForm.removeEventListener('submit', handleSubmit);
-    console.log("searchBarBehavior.js -> Evento de envio da barra de pesquisa removido.");
-    
-    searchForm.addEventListener('submit', handleSubmit)
-    console.log("searchBarBehavior.js -> Evento de envio da barra de pesquisa adicionado.");
+    searchForm.addEventListener('submit', (e) =>{
+        e.preventDefault();
 
-    searchForm.addEventListener('submit', (event) =>{
-        event.preventDefault();
-        searchValue = searchBarInput.value;
-        console.log("searchBarBehavior.js -> searchValue:", searchValue);
+        console.log("SUBMIT DISPARADO");   
+
+        let searchValue = searchBarInput.value;
+        console.log('searchValue:', searchValue);
+
         localStorage.setItem('ContactInfo_selectedContactName', searchValue);
-        window.location.assign('./contactInfo.html');
-    })
 
-    function handleSubmit(event) {
-        event.preventDefault();
+        let qry = contactQuery(searchValue); // função do arquivo contactQuery.js
 
-        const searchValue = searchBarInput.value;
-        if (searchValue) {
-            console.log("searchBarBehavior.js -> searchValue:", searchValue);
-            
+        console.log('RETORNO contactQuery:', qry);
+
+        setTimeout(() => {
+            console.log('timeout pós-modal');
+        }, 0);
+
+        if (qry) {
+            window.location.assign('./contactInfo.html');
         }
-
-        // Verifica se o contato existe antes de redirecionar
+        console.log("PASSOU DO REDIRECT");
         
-    }
-
+    })
 })  
