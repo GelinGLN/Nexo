@@ -1,7 +1,7 @@
 # Nexo — Contact Manager
 
 <p align="center">
-    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+    <img src="http://img.shields.io/static/v1?label=STATUS&message=INTERROMPIDO&color=red&style=for-the-badge"/>
     <img src="http://img.shields.io/static/v1?label=JavaScript%20&message=Based&color=yellow&style=for-the-badge&logo=javascript"/>
     <img src="https://img.shields.io/static/v1?label=node&message=enviroment&color=green&style=for-the-badge&logo=Node.js"/>
     <img src="http://img.shields.io/static/v1?label=License&message=UNLICENSED&color=green&style=for-the-badge"/>
